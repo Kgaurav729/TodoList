@@ -19,7 +19,7 @@ interface Todo {
   status: "pending" | "in-progress" | "completed"
 }
 
-const API_URL = "http://localhost:8000/api/todos"
+const API_URL = "https://todolist-9d2o.onrender.com/api/todos"
 
 export default function TodoList() {
   const [todos, setTodos] = useState<Todo[]>([])
