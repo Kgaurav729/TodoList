@@ -4,7 +4,7 @@ from sanic_cors import CORS
 from db import init_db, DB_NAME
 import aiosqlite
 
-app = Sanic("todo-backend")
+app = Sanic("backend")
 CORS(app, origins=["https://todolist-683f3c.netlify.app/"], supports_credentials=True)
 
 @app.listener("before_server_start")
