@@ -18,7 +18,7 @@ async def ping(request):
 @app.get("/api/todos")
 async def get_todos(request):
     async with aiosqlite.connect(DB_NAME) as db:
-        db.row_factory = aiosqlite.Row  # Ensures you can do dict(row)
+        db.row_factory = aiosqlite.Row  
         cursor = await db.execute("SELECT id, title, completed, status FROM todos")
         rows = await cursor.fetchall()
         todos = [dict(row) for row in rows]
@@ -33,16 +33,15 @@ async def create_todo(request):
     if not title:
         return json({"error": "Title is required"}, status=400)
     
-    # Check for duplicate title (case-insensitive)
+    # Checking for duplicate title (case-insensitive)
     async with aiosqlite.connect(DB_NAME) as db:
         db.row_factory = aiosqlite.Row
-        # Check for duplicate (case-insensitive)
         cursor = await db.execute("SELECT * FROM todos WHERE LOWER(title) = LOWER(?)", (title,))
         existing = await cursor.fetchone()
         if existing:
             return json({"error": "A todo with this title already exists"}, status=409)
 
-        # Insert with default completed and status values
+        # here i am Inserting with default completed and status values
         cursor = await db.execute(
             "INSERT INTO todos (title, completed, status) VALUES (?, ?, ?)",
             (title, False, "pending")

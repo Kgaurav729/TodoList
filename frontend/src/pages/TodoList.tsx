@@ -103,31 +103,6 @@ export default function TodoList() {
     }
   }
 
-  // const onDragEnd = async (result: DropResult) => {
-  //   const { destination, source, draggableId } = result
-
-  //   if (!destination || destination.droppableId === source.droppableId) return
-
-  //   const todoId = parseInt(draggableId)
-  //   const newStatus = destination.droppableId as Todo["status"]
-
-  //   try {
-  //     const target = todos.find((t) => t.id === todoId)
-  //     if (!target) return
-
-  //     await axios.put(`${API_URL}/${todoId}`, {
-  //       title: target.title,
-  //       completed: newStatus === "completed",
-  //       status: newStatus,
-  //     })
-  //     fetchTodos()
-  //     toast.success("Task moved!")
-  //   } catch (err) {
-  //     console.error("Error moving task", err)
-  //     toast.error("Failed to move task")
-  //   }
-  // }
-
   const onDragEnd = async (result: DropResult) => {
     const { destination, source, draggableId } = result
 
