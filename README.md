@@ -120,4 +120,9 @@ todo-frontend/
 
 ---
 
+## Credits
+
+This project was originally based on [React Frontend Boilerplate](https://github.com/Kgaurav729/canary-frontend-boilerplate) and [React Backend Boilerplate](https://github.com/Kgaurav729/canary-backend-boilerplate)by [Dev Sanghani](https://github.com/dsanghan) , used under the [MIT License](https://opensource.org/licenses/MIT).
+
 Happy coding! 🎯
+
