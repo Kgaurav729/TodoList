@@ -5,7 +5,7 @@ from db import init_db, DB_NAME
 import aiosqlite
 
 app = Sanic("backend")
-CORS(app, origins=["https://todolist-683f3c.netlify.app/"], supports_credentials=True)
+CORS(app, origins=["http://localhost:5173","https://todolist-683f3c.netlify.app"], supports_credentials=True)
 
 @app.listener("before_server_start")
 async def setup_db(app, loop):
