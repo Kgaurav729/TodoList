@@ -85,4 +85,4 @@ async def delete_todo(request, todo_id):
         return json({"message": f"Todo {todo_id} deleted successfully"})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(host="0.0.0.0", port=8000)
